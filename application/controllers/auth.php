@@ -22,7 +22,9 @@ class Auth extends CI_Controller {
 	{
 		session_start();
 		$this->load->helper(array('form'));
-   	$this->load->view('login_view');
+   	$this->template->title = 'Login';
+		$this->template->content->view('login_view');
+		$this->template->publish();
 	}
 
 	/* // removed for tutorial
@@ -59,7 +61,7 @@ class Auth extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-
+		header('Location: /');
 		//removed for tutorial
 		//include_once("stanford.authorization.php");
 		//StanfordAuthorization::force_webauth_logout();
