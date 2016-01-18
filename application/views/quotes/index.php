@@ -7,10 +7,7 @@
 <div class="content-card content-quote">
 	<div class="content-body"><? echo $quote->text; ?></div>
 	<div class="content-info">
-		<span class="content-author"><? echo $quote->author; ?></span><!--
-		<span class="content-heart">
-			<i class="icon-heart"></i> 0
-		</span> -->
+		<span class="content-author"><? echo $quote->author; ?></span>
 	</div>
 </div>
 <? } ?>

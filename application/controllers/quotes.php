@@ -2,11 +2,6 @@
 
 class Quotes extends CI_Controller {
 
-	public function view($id = NULL) {
-
-		$data['quote'] = new Quote($id);
-
-	}
 
 	public function index() {
 

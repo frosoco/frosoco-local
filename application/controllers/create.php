@@ -7,7 +7,7 @@ class Create extends CI_Controller {
 	 *
 	 * Route: /create
 	 */
-	public function index() 
+	public function index()
 	{
 
 		if (!$this->authorized()) {
@@ -16,7 +16,6 @@ class Create extends CI_Controller {
 
 		// Create the view
 		$this->template->title = 'Create';
-        $this->template->javascript->add('assets/js/markdown.js');
 		$this->template->content->view('create/index');
 		$this->template->publish();
 
@@ -41,7 +40,7 @@ class Create extends CI_Controller {
         $this->template->stylesheet->add('assets/css/jquery-ui-timepicker-addon.css');
         $this->template->javascript->add('assets/js/jquery-ui-timepicker-addon.js');
 		$this->template->content->view('create/event');
-		$this->template->publish();		
+		$this->template->publish();
 
 	}
 
@@ -56,7 +55,7 @@ class Create extends CI_Controller {
 		$this->template->title = 'Create Post';
         $this->template->javascript->add('assets/js/markdown.js');
 		$this->template->content->view('create/post');
-		$this->template->publish();		
+		$this->template->publish();
 
 	}
 
@@ -67,15 +66,10 @@ class Create extends CI_Controller {
 			header('Location: /login');
 		}
 
-		// Get all the users
-		$u = new User();
-		$data['users'] = $u->order_by('first_name', 'asc')->get();
-
 		// Create the view
 		$this->template->title = 'Create Quote';
-        $this->template->javascript->add('assets/js/markdown.js');
-		$this->template->content->view('create/quote', $data);
-		$this->template->publish();		
+		$this->template->content->view('create/quote');
+		$this->template->publish();
 
 	}
 
@@ -90,7 +84,7 @@ class Create extends CI_Controller {
 		$this->template->title = 'Create Listing';
         $this->template->javascript->add('assets/js/markdown.js');
 		$this->template->content->view('create/listing');
-		$this->template->publish();		
+		$this->template->publish();
 
 	}
 
